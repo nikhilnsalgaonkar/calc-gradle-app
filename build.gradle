@@ -20,6 +20,22 @@ task calculate {
             case 'subtract':
                result = num1 - num2
                break
+            case 'multiply':
+               result = num1 * num2
+               break
+            case 'divide':
+            if (num2 != 0) {
+                result = num1 / num2
+            }
+            else {
+                println 'Error: Divison by zero!'
+                return
+            }
+            break
+        default:
+           println 'Invalid operation!'
+           return
         }
+        println "Result: ${result}"
     }
 }
