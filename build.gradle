@@ -3,5 +3,23 @@ plugins {
 }
 
 task calculate {
-    
+    doLast {
+        def scanner = new Scanner(System.in)
+        println 'Enter first number:'
+        def num1 = scanner.nextDouble()
+        println 'Enter second number:'
+        def num2 = scanner.nextDouble()
+        println 'Enter operation (add, subtract, multiply, divide)'
+        def operation = scanner.nextLine().toLowerCase()
+
+        def result = 0
+        switch (operation) {
+            case 'add':
+               result = num1 + num2
+               break
+            case 'subtract':
+               result = num1 - num2
+               break
+        }
+    }
 }
